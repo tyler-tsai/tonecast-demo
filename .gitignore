@@ -1,0 +1,48 @@
+# macOS
+.DS_Store
+
+# Xcode
+build/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+*.moved-aside
+*.xcuserdatad
+*.xcscmblueprint
+*.xccheckout
+
+# xcodegen regenerates this from project.yml — do not commit
+*.xcodeproj
+
+# Build products
+*.app
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Swift Package Manager
+.swiftpm/
+Package.resolved
+.build/
+.build-sim/
+
+# CocoaPods
+Pods/
+
+# Carthage
+Carthage/Build/
+
+# fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+# Secrets — never commit
+Secrets.plist
+*.xcconfig.local
+.env
+.env.local
+APIKeys.swift
+*.p8
+AuthKey_*.p8

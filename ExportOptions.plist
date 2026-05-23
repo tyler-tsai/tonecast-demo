@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- Distribution method for TestFlight uploads. Xcode 16+ deprecated
+         the historical "app-store" value in favor of "app-store-connect"
+         — both still work, but the new name silences the deprecation
+         warning that ship.sh was printing on every run. -->
+    <key>method</key>
+    <string>app-store-connect</string>
+
+    <!-- Apple Developer team. -->
+    <key>teamID</key>
+    <string>XXXXXXXXXX</string>
+
+    <!-- Let Xcode resolve provisioning profiles automatically based on
+         the bundle id + entitlements + active certs in your Keychain.
+         If you prefer manual profile management, switch to "manual" and
+         add a `provisioningProfiles` dict mapping each bundle id to
+         a specific profile name. -->
+    <key>signingStyle</key>
+    <string>automatic</string>
+
+    <!-- Symbols are useful for TestFlight crash symbolication. -->
+    <key>uploadSymbols</key>
+    <true/>
+
+    <!-- Strip Swift's debug symbol stripping at archive time. -->
+    <key>stripSwiftSymbols</key>
+    <true/>
+
+    <!-- Future-friendly: keeps a path open for bitcode-aware re-deploy. -->
+    <key>compileBitcode</key>
+    <false/>
+
+    <!-- Helpful when the script triggers a new upload to App Store
+         Connect — without it, multiple uploads in a session can pause
+         for human confirmation. -->
+    <key>destination</key>
+    <string>upload</string>
+</dict>
+</plist>
